@@ -1,0 +1,116 @@
+:root {
+  --primary: #a32cc4;
+  --dark: #151e3d;
+  --grey: #ccc;
+  --light: #eee;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Fira sans, sans-serif;
+}
+body {
+  background-color: var(--light);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+header {
+  background-color: var(--dark);
+  padding: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 3px solid var(--primary);
+}
+header h1 {
+  color: #fff;
+  font-size: 42px;
+  text-transform: uppercase;
+  text-shadow: -4px 1px var(--primary);
+}
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 0%;
+}
+.board {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+}
+.cell {
+  position: relative;
+  border: 2px solid var(--dark);
+  width: 100px;
+  padding-top: 100%;
+  cursor: pointer;
+}
+.cell:nth-child(1),
+.cell:nth-child(2),
+.cell:nth-child(3) {
+  border-top: none;
+}
+.cell:nth-child(1),
+.cell:nth-child(4),
+.cell:nth-child(7) {
+  border-left: none;
+}
+.cell:nth-child(7),
+.cell:nth-child(8),
+.cell:nth-child(9) {
+  border-bottom: none;
+}
+.cell:nth-child(3),
+.cell:nth-child(6),
+.cell:nth-child(9) {
+  border-right: none;
+}
+.cell.x,
+.cell.o {
+  cursor: not-allowed;
+}
+
+.cell.x::after,
+.cell.x::before,
+.board.turn-x .cell:not(.x):not(.o):hover::after,
+.board.turn-x .cell:not(.x):not(.o):hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 10px;
+  height: 90px;
+  background-color: var(--dark);
+  border-radius: 99px;
+}
+.cell.x::before,
+.board.turn-x .cell:not(.x):not(.o):hover::before {
+  transform: translate(-50%, -50%) rotate(-45deg);
+}
+.cell.x::after,
+.board.turn-x .cell:not(.x):not(.o):hover::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+.cell.o::before,
+.board.turn-o .cell:not(.x):not(.o):hover::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60px;
+  height: 60px;
+  border: 10px solid var(--dark);
+  border-radius: 50%;
+}
+.board.turn-x .cell:not(.x):not(.o):hover::after,
+.board.turn-x .cell:not(.x):not(.o):hover::before {
+  background-color: var(--grey);
+}
+.board.turn-o .cell:not(.x):not(.o):hover::before {
+  border-color: var(--grey);
+}
