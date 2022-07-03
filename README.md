@@ -1,8 +1,8 @@
 # tic-tac-toe-javascript-css
 
-Tic-tac-toe game built with JavaScript
+Tic-tac-toe game made from scratch with JavaScript: following this  tutorial on youtube: https://www.youtube.com/watch?v=9AUCqrp9G3o&t=1003s
 
-* Credit to: https://www.youtube.com/watch?v=9AUCqrp9G3o&t=1003s, author: Tyler Potts
+* Credit to author: Tyler Potts
 
 
 * HTML
@@ -11,7 +11,7 @@ Tic-tac-toe game built with JavaScript
 * nested arrays
 * array functions: to test for player wins loses and draws
 
-* Finished game is hosted on Netlify at:
+* Finished game is hosted on Netlify 
 * Click on the below link to view and play game
 
 https://deluxe-sopapillas-e4b671.netlify.app/
